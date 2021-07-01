@@ -79,11 +79,13 @@ model.add(Dense(units=1,kernel_initializer='uniform', activation='sigmoid'))
 
 model.summary()
 
-model.compile(loss='binary crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='binary_crossentropy', optimizer='adam',
+metrics=['accuracy'])
 
-train_history= model.fit(x=train_feature_trans, y=train_label, validation_split=0.8, epochs=200, batch_size=500, verbose=2)
+train_history = model.fit(x=train_feature_trans, y=train_label,
+validation_split=0.8, epochs=200,
+batch_size=500, verbose=2)
 
-show_train_history(train_history, 'loss', 'val_acc')
 
 !pip install streamlit
 
